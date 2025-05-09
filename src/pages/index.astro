@@ -3,9 +3,14 @@ import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import GradientBackground from "../components/GradientBackground.astro";
 
+const options = {
+	title: 'Tech School',
+	description: 'Primer evento tecnologico inter regional',
+};
+
 ---
 
-<Layout>
+<Layout options={options}>
 	<GradientBackground color="blue" transformX={-90} transformY={-40} />
 	<Hero />
 </Layout>
