@@ -1,0 +1,40 @@
+---
+import type { Options } from '../contracts/options.type'
+
+interface Props {
+  options: Options
+}
+const { options } = Astro.props
+const { metaRobots, title, description,} = options
+
+---
+
+<!doctype html>
+<html dir="ltr" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <title>{title}</title>
+
+    <slot name="preconnect" />
+
+    <slot name="async-script" />
+
+    <slot name="stylesheet" />
+
+    <meta content={metaRobots || 'index, follow'} name="robots" />
+    {description && <meta content={description} name="description" />}
+    {description && <link href={Astro.url.href} rel="canonical" />}
+    <meta
+      content="UXCorpRangel - https://github.com/UXCorpRangel"
+      name="author"
+    />
+    <meta content={Astro.generator} name="generator" />
+  </head>
+  <body>
+    <slot />
+
+    <slot name="dynamic-components" />
+  </body>
+</html>
