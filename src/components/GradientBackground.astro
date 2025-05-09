@@ -1,0 +1,43 @@
+---
+import { type GradientsColors, COLORS } from "../contracts/gradient.type"
+
+interface Props {
+  color: GradientsColors,
+  transformX: number,
+  transformY: number
+}
+
+const { color, transformX, transformY } = Astro.props
+
+const gradientColor = COLORS[color]
+---
+
+<div
+  class="gradient-background"
+  style={`--gradient: ${gradientColor}; --transformX: ${transformX}%; --transformY: ${transformY}%;`}
+>
+  <slot />
+</div>
+
+<style>
+  .gradient-background {
+    position: absolute;
+    top: -3%;
+    left: 50%;
+    max-height: 1064px;
+    max-width: 1064px;
+    height: 100%;
+    width: 100%;
+    background: var(--gradient);
+    transform: translate(var(--transformX), var(--transformY));
+  }
+
+  @media (max-width: 480px) {
+    .gradient-background {
+      max-height: 514px;
+      max-width: 514px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+</style>
