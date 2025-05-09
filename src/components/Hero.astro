@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+---
+
+<div class="hero-cont">
+  <section class="hero">
+    <Icon name="logo" size={93} />
+    <Icon name="TechSchool" width={200} height={150} />
+
+    <h2>Primer evento tecnologico <span>inter regional</span></h2>
+  </section>
+
+  <p>
+    Participa en talleres presenciales donde aprenderás de expertos, ampliarás
+    tu red y descubrirás las últimas tendencias
+  </p>
+</div>
+
+<style>
+  .hero-cont {
+    position: relative;
+    padding-block-start: 3.8rem;
+
+    & .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-inline: 1.5rem;
+
+      & h2 {
+        color: #ffffff;
+      }
+
+      & h2 {
+        font-weight: 700;
+        fotn-size: 2rem;
+        text-align: center;
+
+        & span {
+          color: #2dd4c0;
+        }
+      }
+    }
+    p {
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+</style>
