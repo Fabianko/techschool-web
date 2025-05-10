@@ -1,16 +1,22 @@
 ---
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
 import GradientBackground from "../components/GradientBackground.astro";
 
-const options = {
-	title: 'Tech School',
-	description: 'Primer evento tecnologico inter regional',
-};
+import Region from "@components/region.astro";
 
+const options = {
+  title: "Tech School",
+  description: "Primer evento tecnologico inter regional",
+};
 ---
 
 <Layout options={options}>
-	<GradientBackground color="blue" transformX={-90} transformY={-40} />
-	<Hero />
+  <GradientBackground color="blue" transformX={-90} transformY={-40} />
+  <Hero />
+  <Region
+    region="Santiago"
+    icon="santiago"
+    direction="Av. Esq. Blanca 501, Maipú, Región Metropolitana, Chile"
+  />
 </Layout>
