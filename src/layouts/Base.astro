@@ -1,6 +1,13 @@
 ---
-import type { Options } from '../contracts/options.type';
+import type { Options } from '@contracts';
+import CriticalCSS from '@components/struct/CriticalCss.astro';
+import Favicons from '@components/struct/Favicons.astro';
+import onestWoff2 from '@fontsource-variable/onest/files/onest-latin-wght-normal.woff2?url';
+import { Schema } from 'astro-seo-schema';
+
+import '@fontsource-variable/onest';
 import '@styles/globals.css';
+
 interface Props {
   options: Options;
 }
@@ -17,19 +24,59 @@ const { metaRobots, title, description } = options;
     <title>{title}</title>
 
     <slot name="preconnect" />
-
     <slot name="async-script" />
 
+    <CriticalCSS />
+
     <slot name="stylesheet" />
+
+    <link
+      as="font"
+      crossorigin="anonymous"
+      href={onestWoff2}
+      rel="preload"
+      type="font/woff2"
+    />
+
+    <slot name="preload" />
+    <slot name="defer-script" />
 
     <meta content={metaRobots || 'index, follow'} name="robots" />
     {description && <meta content={description} name="description" />}
     {description && <link href={Astro.url.href} rel="canonical" />}
     <meta
-      content="UXCorpRangel - https://github.com/UXCorpRangel"
+      content="UXCorpRangel - https://uxcorprangel.github.io/"
       name="author"
     />
     <meta content={Astro.generator} name="generator" />
+
+    {
+      description && (
+        <Schema
+          item={{
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'TechSchool',
+            url: Astro.url.href,
+            logo: Astro.url.href + 'og/og.jpg',
+            description:
+              'Primer evento tecnológico inter regional. Participa en talleres presenciales donde aprenderás de expertos, ampliarás tu red y descubrirás las últimas tendencias.',
+            sameAs: [
+              // Social Media links
+            ]
+          }}
+        />
+      )
+    }
+
+    <slot name="schema" />
+
+    <Favicons />
+
+    <meta content="dark light" name="color-scheme" />
+    <meta content="#3400c6" name="theme-color" />
+
+    <slot name="social-media" />
   </head>
   <body>
     <slot />
