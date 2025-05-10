@@ -7,7 +7,13 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@contracts": ["src/contracts"],
-      "@styles/*": ["src/styles/*"]
+      "@data/*": ["src/data/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@scripts/*": ["src/scripts/*"],
+      "@sections/*": ["src/pages/_*"],
+      "@styles/*": ["src/styles/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "@images/*": ["src/images/*"]
     }
   }
 }
