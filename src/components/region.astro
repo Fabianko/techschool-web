@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Button from "./Button.astro";
+
+interface Props {
+  icon: string;
+  region: string;
+  direction: string;
+}
+
+const { icon, region, direction } = Astro.props;
+---
+
+<div class="region-cont">
+  <Icon name={icon} size={280} />
+
+  <section>
+    <h2>{region}</h2>
+    <p>📍{direction}</p>
+    <Button variant="primary"> Inscribirme </Button>
+  </section>
+</div>
+
+<style>
+  .region-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & h2,
+      p {
+        text-align: center;
+      }
+
+      & p {
+      }
+    }
+  }
+</style>
