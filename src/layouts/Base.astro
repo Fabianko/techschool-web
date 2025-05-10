@@ -1,6 +1,6 @@
 ---
-import type { Options } from "../contracts/options.type";
-import "@styles/globals.css";
+import type { Options } from '../contracts/options.type';
+import '@styles/globals.css';
 interface Props {
   options: Options;
 }
@@ -22,7 +22,7 @@ const { metaRobots, title, description } = options;
 
     <slot name="stylesheet" />
 
-    <meta content={metaRobots || "index, follow"} name="robots" />
+    <meta content={metaRobots || 'index, follow'} name="robots" />
     {description && <meta content={description} name="description" />}
     {description && <link href={Astro.url.href} rel="canonical" />}
     <meta

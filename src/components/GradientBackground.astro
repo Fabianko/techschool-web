@@ -1,15 +1,15 @@
 ---
-import { type GradientsColors, COLORS } from "../contracts/gradient.type"
+import { COLORS, type GradientsColors } from '../contracts/gradient.type';
 
 interface Props {
-  color: GradientsColors,
-  transformX: number,
-  transformY: number
+  color: GradientsColors;
+  transformX: number;
+  transformY: number;
 }
 
-const { color, transformX, transformY } = Astro.props
+const { color, transformX, transformY } = Astro.props;
 
-const gradientColor = COLORS[color]
+const gradientColor = COLORS[color];
 ---
 
 <div

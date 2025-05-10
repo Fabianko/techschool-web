@@ -1,5 +1,5 @@
 export interface Options {
-  title: string
-  description: string
-  metaRobots?: string
+  title: string;
+  description: string;
+  metaRobots?: string;
 }

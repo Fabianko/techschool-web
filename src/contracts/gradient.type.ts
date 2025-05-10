@@ -3,7 +3,7 @@ const colorValues = {
   purple: 'rgba(113, 0, 236, 1)',
   lightPurple: 'rgba(232, 218, 247, 1)',
   darkPurple: '#1E0D4F',
-  white: '#FFFFFF',
+  white: '#FFFFFF'
 };
 
 export type GradientsColors = keyof typeof colorValues;
