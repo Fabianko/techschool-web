@@ -1,9 +1,7 @@
 ---
 import Hero from '@components/Hero.astro';
-import Region from '@components/Region.astro';
+import Locations from '@components/Locations.astro';
 import OpenGraph from '@components/struct/OpenGraph.astro';
-
-import { places } from '@data/places';
 
 import Layout from '@layouts/Layout.astro';
 
@@ -24,20 +22,18 @@ const options = {
   <main>
     <Hero />
 
-    {places.map(
-      ({ direction, icon, name }) => (
-
-        <Region
-          direction={direction}
-          icon={icon}
-          region={name}
-        />
-      )
-    )}
-
+    <Locations />
   </main>
 
   <footer>
     <!-- TODO: Add your footer here -->
   </footer>
 </Layout>
+
+<style>
+  main {
+    overflow: hidden;
+    padding-inline: 4.5rem;
+    padding-block-end: 6.5rem;
+  }
+</style>

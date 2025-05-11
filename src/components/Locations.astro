@@ -1,0 +1,45 @@
+---
+import Region from '@components/Region.astro';
+
+import { places } from '@data/places';
+---
+
+<section class="container">
+  {places.map(
+    ({ direction, icon, name }, index) => (
+      <>
+        <Region
+          direction={direction}
+          icon={icon}
+          region={name}
+        />
+
+        {
+          index % 2 === 0 ? <hr /> : null
+        }
+      </>
+    )
+  )}
+</section>
+
+<style>
+  .container {
+    color: var(--white);
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding-inline: 4.5rem;
+    padding-block-start: 6.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 6.5rem;
+
+    & hr {
+      height: 100%;
+      border: 1px solid #44403C;
+    }
+  }
+</style>
