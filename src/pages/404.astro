@@ -1,0 +1,40 @@
+---
+import OpenGraph from '@components/struct/OpenGraph.astro';
+import Base from '@layouts/Base.astro';
+import Link from '@ui/Link.astro';
+import { Icon } from 'astro-icon/components';
+
+const options = {
+  title: 'Tech School',
+  description: 'Primer evento tecnologico inter regional'
+};
+---
+
+<Base options={options}>
+  <OpenGraph
+    description={options.description}
+    image="/og/og.jpg"
+    slot="social-media"
+    title={options.title}
+  />
+
+  <main>
+    <Icon name="logo" size={162} />
+
+    <h1>404 - Page Not Found</h1>
+    <Link link="/">Go back to the homepage</Link>
+  </main>
+</Base>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    gap: 1.5rem;
+  }
+</style>
