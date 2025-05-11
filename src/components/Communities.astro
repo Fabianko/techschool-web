@@ -1,3 +1,120 @@
-<section>
-  Communities marquee
+---
+import { communities } from '@data/communities';
+
+import Link from '@ui/Link.astro';
+---
+
+<section class="communities">
+  <div class="slider-container">
+    <div class="slider-wrap">
+      <div class="slider">
+        {
+          communities.map(({ image, title, url }) => (
+            <div>
+              <img alt={title} src={image} />
+              <Link icon="arrow-up-right" link={url} variant="ghost">
+                Ver más
+              </Link>
+            </div>
+          ))
+        }
+      </div>
+      <div class="slider">
+        {
+          communities.map(({ image, title, url }) => (
+            <div>
+              <img alt={title} src={image} />
+              <Link icon="arrow-up-right" link={url} variant="ghost">
+                Ver más
+              </Link>
+            </div>
+          ))
+        }
+      </div>
+      <div class="slider">
+        {
+          communities.map(({ image, title, url }) => (
+            <div>
+              <img alt={title} src={image} />
+              <Link icon="arrow-up-right" link={url} variant="ghost">
+                Ver más
+              </Link>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .communities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8rem auto;
+    overflow: hidden;
+    width: 100%;
+
+    & .slider-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 3rem auto;
+      mask-image: linear-gradient(
+        to right,
+        rgb(0 0 0 / 0),
+        rgb(0 0 0 / 1) 20%,
+        rgb(0 0 0 / 1) 80%,
+        rgb(0 0 0 / 0)
+      );
+
+      @media (width <= 768px) {
+        max-width: 85dvw;
+      }
+
+      & .slider-wrap {
+        display: flex;
+
+        &:hover {
+          & .slider {
+            animation-play-state: paused;
+          }
+        }
+
+        .slider {
+          display: flex;
+          flex-shrink: 0;
+          animation-name: swiperAnimation;
+          animation-duration: 40s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+
+          & div {
+            margin-left: 3.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+
+          & img {
+            width: 9.5rem;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes swiperAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>

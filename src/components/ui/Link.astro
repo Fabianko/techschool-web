@@ -1,0 +1,113 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type ButtonColor = 'white' | 'teal';
+type ButtonSize = 'fit' | 'large' | 'full';
+type ButtonVariant = 'solid' | 'stroke' | 'ghost';
+
+interface Props {
+  variant?: ButtonVariant;
+  color?: ButtonColor;
+  link: string;
+  icon?: string;
+  size?: ButtonSize;
+  target?: boolean;
+}
+
+const {
+  size = 'fit',
+  icon = 'none',
+  color = 'teal',
+  variant = 'solid',
+  link,
+  target
+} = Astro.props;
+---
+
+<a
+  class:list={['anchor', variant, color, size]}
+  href={link}
+  rel={target ? 'noopener noreferrer' : ''}
+  target={target ? '_blank' : '_self'}
+>
+  {
+    icon === 'none'
+      ? (
+          <slot />
+        )
+      : (
+          <>
+            <slot />
+            <Icon name={icon} size="16" />
+          </>
+        )
+  }
+</a>
+
+<style>
+  .anchor {
+    --anchor-color-hover: color-mix(in srgb, var(--anchor-color) 80%, var(--black) 20%);
+    --anchor-color-hover-2: color-mix(in srgb, var(--anchor-color) 30%, var(--black) 10%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+    text-decoration: none;
+
+    &.white {
+      --anchor-color: var(--white);
+    }
+
+    &.teal {
+      --anchor-color: var(--teal);
+    }
+
+    &.fit {
+      max-width: fit-content;
+    }
+
+    &.large {
+      width: 13rem;
+    }
+
+    &.full {
+      width: 100%;
+    }
+
+    &.solid {
+      background: var(--anchor-color);
+      color: var(--black);
+
+      &:hover {
+        background: var(--anchor-color-hover);
+      }
+    }
+
+    &.stroke {
+      background: none;
+      border: 1px solid var(--anchor-color);
+      color: var(--white);
+
+      &:hover {
+        color: var(--black);
+        background: var(--anchor-color-hover);
+      }
+    }
+
+    &.ghost {
+      background: none;
+      border: 0;
+      color: var(--anchor-color);
+
+      &:hover {
+        background: var(--anchor-color-hover-2);
+      }
+    }
+  }
+</style>
