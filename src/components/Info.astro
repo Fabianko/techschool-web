@@ -1,0 +1,50 @@
+<section class="container">
+  <article>
+    <span class="number">30</span>
+    <span class="subtext">Talleres</span>
+  </article>
+
+  <article>
+    <span class="number">4</span>
+    <span class="subtext">Ciudades</span>
+  </article>
+
+  <article>
+    <span class="number">+500</span>
+    <span class="subtext">Personas</span>
+  </article>
+</section>
+
+<style>
+  .container {
+    color: var(--white);
+    width: 100%;
+    position: relative;
+    padding-inline: 4.5rem;
+
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+
+    & article {
+      width: 18.73rem;
+      height: 12.75rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .number {
+        height: 6.25rem;
+        font-weight: 700;
+        font-size: 4rem;
+      }
+
+      & .subtext {
+        font-weight: 500;
+        font-size: 2rem;
+      }
+    }
+  }
+</style>

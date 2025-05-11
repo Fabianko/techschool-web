@@ -1,5 +1,6 @@
 ---
 import Hero from '@components/Hero.astro';
+import Info from '@components/Info.astro';
 import Locations from '@components/Locations.astro';
 import OpenGraph from '@components/struct/OpenGraph.astro';
 
@@ -23,6 +24,8 @@ const options = {
     <Hero />
 
     <Locations />
+
+    <Info />
   </main>
 
   <footer>
@@ -35,5 +38,9 @@ const options = {
     overflow: hidden;
     padding-inline: 4.5rem;
     padding-block-end: 6.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6.5rem;
   }
 </style>
