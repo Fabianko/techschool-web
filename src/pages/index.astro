@@ -1,9 +1,11 @@
 ---
+import Hero from '@components/Hero.astro';
 import Region from '@components/Region.astro';
-import GradientBackground from '../components/GradientBackground.astro';
-import Hero from '../components/Hero.astro';
+import OpenGraph from '@components/struct/OpenGraph.astro';
 
-import Layout from '../layouts/Layout.astro';
+import { places } from '@data/places';
+
+import Layout from '@layouts/Layout.astro';
 
 const options = {
   title: 'Tech School',
@@ -12,11 +14,30 @@ const options = {
 ---
 
 <Layout options={options}>
-  <GradientBackground color="blue" transformX={-90} transformY={-40} />
-  <Hero />
-  <Region
-    direction="Av. Esq. Blanca 501, Maipú, Región Metropolitana, Chile"
-    icon="santiago"
-    region="Santiago"
+  <OpenGraph
+    description={options.description}
+    image="/og/og.jpg"
+    slot="social-media"
+    title={options.title}
   />
+
+  <main>
+    <Hero />
+
+    {places.map(
+      ({ direction, icon, name }) => (
+
+        <Region
+          direction={direction}
+          icon={icon}
+          region={name}
+        />
+      )
+    )}
+
+  </main>
+
+  <footer>
+    <!-- TODO: Add your footer here -->
+  </footer>
 </Layout>

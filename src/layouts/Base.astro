@@ -1,6 +1,6 @@
 ---
 import type { Options } from '@contracts';
-import CriticalCSS from '@components/struct/CriticalCss.astro';
+import CriticalCss from '@components/struct/CriticalCss.astro';
 import Favicons from '@components/struct/Favicons.astro';
 import onestWoff2 from '@fontsource-variable/onest/files/onest-latin-wght-normal.woff2?url';
 import { Schema } from 'astro-seo-schema';
@@ -26,7 +26,7 @@ const { metaRobots, title, description } = options;
     <slot name="preconnect" />
     <slot name="async-script" />
 
-    <CriticalCSS />
+    <CriticalCss />
 
     <slot name="stylesheet" />
 

@@ -1,6 +1,11 @@
 :root {
-  --black: #000000;
+  --black: #100C07;
   --white: #ffffff;
+
+  --teal: #2DD4BF;
+  --purple: #7100EC;
+  --blue: #3400C6;
+  --deep-blue: #381BA5;
 
   /*radius sizes*/
   --rounded-sm: 0.25rem;
@@ -10,13 +15,23 @@
   --rounded-2xl: 1rem;
   --rounded-3xl: 1.5rem;
   --rounded-full: 9999px;
+
+  color-scheme: dark;
 }
 
 body {
   font-size: 16px;
   font-family: "Onest Variable", sans-serif;
+  min-height: 100vh;
   color: var(--white);
-  background-color: var(--black);
+  background: var(--black);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(168deg, var(--black) 49.19%, var(--deep-blue) 103.53%);
+}
+
+h1,
+h2 {
+  text-wrap: balance;
 }
 
 h1 {
@@ -46,9 +61,21 @@ h4 {
 
 p {
   font-size: 20px;
+  margin-block: 1lh;
+  text-wrap: pretty;
 }
 
 a {
   color: var(--white);
   text-decoration: none;
+}
+
+.stack {
+  display:flex;
+  flex-direction: column;
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
 }

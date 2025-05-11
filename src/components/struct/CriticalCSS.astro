@@ -1,19 +1,24 @@
 <style is:inline>
 :root {
-  --scrollbar: #e5e5e5;
-  --scrollbar-thumb: #c0c0c0;
-  --scrollbar-thumb-hover: #909090;
-  --scrollbar-dark: #898989;
-  --scrollbar-thumb-dark: #5d5d5d;
-  --scrollbar-thumb-hover-dark: #3f3f3f;
+  --scrollbar: #27241f;
+  --scrollbar-thumb: #6514bd;
+  --scrollbar-thumb-hover: #7f19ed;
 }
 
 @view-transition {
   navigation: auto;
 }
 
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 body::-webkit-scrollbar {
@@ -25,31 +30,13 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
   border-radius: 0.25rem;
+  background: var(--scrollbar-thumb);
 }
 
 @media (any-hover: hover) {
   body::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html body::-webkit-scrollbar {
-    background: var(--scrollbar-dark);
-    transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: background;
-  }
-
-  html body::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb-dark);
-  }
-
-  @media (any-hover: hover) {
-    html body::-webkit-scrollbar-thumb:hover {
-      background: var(--scrollbar-thumb-hover-dark);
-    }
   }
 }
 
@@ -59,13 +46,6 @@ body::-webkit-scrollbar-thumb {
     scrollbar-color: var(--scrollbar) var(--scrollbar-thumb);
     scrollbar-width: thin;
     scrollbar-gutter: stable;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html,
-    html body {
-      scrollbar-color: var(--scrollbar-dark) var(--scrollbar-thumb-dark);
-    }
   }
 }
 </style>

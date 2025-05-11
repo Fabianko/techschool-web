@@ -1,2 +1,2 @@
-export * from './gradient.type';
 export * from './options.type';
+export * from './place.type';
