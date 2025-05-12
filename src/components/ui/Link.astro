@@ -1,16 +1,16 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-type ButtonColor = 'white' | 'teal';
-type ButtonSize = 'fit' | 'large' | 'full';
-type ButtonVariant = 'solid' | 'stroke' | 'ghost';
+type LinkColor = 'white' | 'teal';
+type LinkSize = 'fit' | 'large' | 'full';
+type LinkVariant = 'solid' | 'stroke' | 'ghost';
 
 interface Props {
-  variant?: ButtonVariant;
-  color?: ButtonColor;
+  variant?: LinkVariant;
+  color?: LinkColor;
   link: string;
   icon?: string;
-  size?: ButtonSize;
+  size?: LinkSize;
   target?: boolean;
 }
 

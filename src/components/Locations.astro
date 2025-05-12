@@ -6,11 +6,12 @@ import { places } from '@data/places';
 
 <section class="container">
   {places.map(
-    ({ direction, icon, name }, index) => (
+    ({ direction, icon, name, link }, index) => (
       <>
         <Region
           direction={direction}
           icon={icon}
+          link={link}
           region={name}
         />
 
@@ -34,6 +35,7 @@ import { places } from '@data/places';
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 1.5rem;
     grid-row-gap: 6.5rem;
+    justify-items: center;
 
     & hr {
       height: 100%;

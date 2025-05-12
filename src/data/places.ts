@@ -2,23 +2,27 @@ import type { TechPlace } from '@contracts';
 
 export const places: TechPlace[] = [
   {
-    icon: 'santiago',
+    icon: '/src/images/states/santiago.webp',
     name: 'Santiago',
-    direction: 'Av. Esq. Blanca 501, Maipú, Región Metropolitana, Chile'
+    direction: 'Av. Esq. Blanca 501, Maipú, Región Metropolitana, Chile',
+    link: '#'
   },
   {
-    icon: 'valparaiso',
+    icon: '/src/images/states/valparaiso.webp',
     name: 'Valparaíso',
-    direction: 'Brasil 2021, Valparaíso, Chile'
+    direction: 'Brasil 2021, Valparaíso, Chile',
+    link: '#'
   },
   {
-    icon: 'puerto-montt',
+    icon: '/src/images/states/puertomontt.webp',
     name: 'Puerto Montt',
-    direction: 'Egaña 651, Puero Montt, Los Lagos, Chile'
+    direction: 'Egaña 651, Puero Montt, Los Lagos, Chile',
+    link: '#'
   },
   {
-    icon: 'concepcion',
+    icon: '/src/images/states/concepcion.webp',
     name: 'Concepción',
-    direction: 'Paicaví 3280, Concepción, Bío Bío, Chile'
+    direction: 'Paicaví 3280, Concepción, Bío Bío, Chile',
+    link: '#'
   }
 ];
