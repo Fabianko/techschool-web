@@ -80,6 +80,7 @@ import { Icon } from 'astro-icon/components';
       position: absolute;
       width: 60vw;
       aspect-ratio: 1 / 1;
+      filter: blur(10px);
 
       @media (width <= 1024px) {
         width: 24rem;
@@ -94,6 +95,8 @@ import { Icon } from 'astro-icon/components';
       inset-block-start: -25rem;
       inset-inline-start: -9.75rem;
       background: radial-gradient(50% 50% at 50% 50%, var(--deep-blue) 0%, transparent 100%);
+      transform-origin: 0 50%;
+      animation: bubble-1 21s ease infinite alternate;
 
       @media (width <= 1024px) {
         inset-block-start: -12rem;
@@ -110,6 +113,8 @@ import { Icon } from 'astro-icon/components';
       inset-block-end: -22rem;
       inset-inline-end: -19.5rem;
       background: radial-gradient(50% 50% at 50% 50%, rgb(from var(--purple) r g b / 0.5) 0%, transparent 100%);
+      animation: bubble-2 15s ease infinite alternate;
+      transform-origin: 60% 50%;
 
       @media (width <= 1024px) {
         inset-block-end: -12rem;
@@ -120,6 +125,34 @@ import { Icon } from 'astro-icon/components';
         inset-block-end: -6rem;
         inset-inline-end: -15rem;
       }
+    }
+  }
+
+  @keyframes bubble-1 {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+
+    50% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    100% {
+      transform: scale(1.2) rotate(-12deg);
+    }
+  }
+
+  @keyframes bubble-2 {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+
+    100% {
+      transform: scale(1.2) rotate(270deg);
+    }
+
+    0% {
+      transform: scale(0.6) rotate(0);
     }
   }
 </style>
