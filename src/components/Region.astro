@@ -43,14 +43,14 @@ const getImages = import.meta.glob<{ default: ImageMetadata }>(
     width: 20rem;
 
     @media (width <= 768px) {
-      width: 100%;
+      width: 16rem;
     }
 
     & img {
       object-fit: cover;
 
       @media (width <= 768px) {
-        width: 80%;
+        width: 100%;
 
         object-fit: contain;
       }
