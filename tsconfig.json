@@ -12,6 +12,7 @@
       "@scripts/*": ["src/scripts/*"],
       "@styles/*": ["src/styles/*"],
       "@ui/*": ["src/components/ui/*"],
+      "@struct/*": ["src/components/struct/*"],
       "@images/*": ["src/images/*"]
     }
   }
