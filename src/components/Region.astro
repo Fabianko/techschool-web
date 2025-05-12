@@ -42,8 +42,18 @@ const getImages = import.meta.glob<{ default: ImageMetadata }>(
     align-items: center;
     width: 20rem;
 
+    @media (width <= 768px) {
+      width: 100%;
+    }
+
     & img {
       object-fit: cover;
+
+      @media (width <= 768px) {
+        width: 80%;
+
+        object-fit: contain;
+      }
     }
 
     & section {
@@ -55,7 +65,16 @@ const getImages = import.meta.glob<{ default: ImageMetadata }>(
         text-align: center;
       }
 
+      & h2 {
+        @media (width <= 768px) {
+          font-size: 2.25rem;
+      }
+      }
+
       & p {
+        @media (width <= 768px) {
+          font-size: 1.25rem;
+        }
       }
     }
   }

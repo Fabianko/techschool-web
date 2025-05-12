@@ -57,6 +57,10 @@ import Link from '@ui/Link.astro';
     overflow: hidden;
     width: 100%;
 
+    @media (width <= 768px) {
+      overflow: visible;
+    }
+
     & .slider-container {
       width: 100%;
       max-width: 1280px;
