@@ -7,12 +7,12 @@ type PertnerItem = {
 export const partners: PertnerItem[] = [
   {
     name: 'DUOCUC',
-    logo: '/src/images/logos/duoc.png',
+    logo: '/images/duoc.png',
     url: 'https://www.duoc.cl/escuela/informatica-telecomunicaciones/citt/'
   },
   {
     name: 'CIIT DUOCUC',
-    logo: '/src/images/logos/ciit.png',
+    logo: '/images/ciit.png',
     url: 'https://www.duoc.cl/escuela/informatica-telecomunicaciones/citt/'
   }
 ];
