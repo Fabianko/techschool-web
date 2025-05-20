@@ -1,0 +1,49 @@
+---
+import { partners } from '@data/partners';
+
+---
+<section class="partners">
+  <h2>Nuestros Partners</h2>
+  <ul class="partners-list">
+    {partners.map((partner) => (
+      <li class="partner-item">
+        <a href={partner.url} rel="noopener noreferrer" target="_blank">
+          <img alt={`Logo de ${partner.name}`} src={partner.logo} />
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  .partners {
+    text-align: center;
+    padding: 2rem;
+  }
+  .partners-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  .partner-item {
+    text-align: center;
+  }
+  .partner-item img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
+  }
+  .partner-item a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+</style>
